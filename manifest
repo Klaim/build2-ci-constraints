@@ -9,10 +9,18 @@ email: mjklaim@gmail.com
 #build-error-email: mjklaim@gmail.com
 depends: * build2 >= 0.14.0-
 depends: * bpkg >= 0.14.0-
-#depends: libhello ^1.0.0
+
+requires: c++20 | c++23
+
+# MSVC >= 16.10
+# gcc >= 11
+# clang excluded from mac
 
 builds: default experimental
+builds: msvc_16.10+         ; Only support msvc 16.10 and higher
+builds: gcc-11+             ; Only support GCC 11 and higher
+builds: clang-12+           ; Only support Clang 12 and higher
+build-exclude: macos*-clang**  # matches macos_10.13-gcc_8.1-O3
 
-requires: c++20
-requires: c++23
+
 
