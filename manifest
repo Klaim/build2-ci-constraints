@@ -11,6 +11,8 @@ depends: * build2 >= 0.14.0-
 depends: * bpkg >= 0.14.0-
 #depends: libhello ^1.0.0
 
-requires: c++20 | c++23
-builds: experimental
+builds: default experimental
+
+requires: c++20
+requires: c++23
 
